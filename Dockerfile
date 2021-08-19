@@ -5,7 +5,7 @@ RUN apt-get install -y vim wget dialog net-tools
 RUN apt-get install -y nginx
 RUN rm -v /etc/nginx/nginx.conf
 ADD nginx.conf /etc/nginx/
-RUN mkdri /etc/nginx/logs
+RUN mkdir /etc/nginx/logs
 ADD index.html /www/data/
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 COPY runner.sh /runner.sh
